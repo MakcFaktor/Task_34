@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Main from './components/Main';
 import About from './components/About';
 import Hotels from './components/Hotels';
+import './MainPage.css';
 
 function App() {
     return (

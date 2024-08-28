@@ -1,10 +1,11 @@
 import React from 'react';
-import { Button, TextField, Container, Typography, Grid, Paper, Box } from '@mui/material';
+import { Button, TextField, Container, Typography, Paper, Box } from '@mui/material';
 import { Link } from 'react-router-dom';
+
 
 function MainPage() {
     return (
-        <Container maxWidth="md" style={{ marginTop: '50px' }}>
+        <Container maxWidth="md" sx={{ marginTop: '50px' }}>
             <Box display="flex" justifyContent="flex-end" mb={2}>
                 <Button color="inherit" component={Link} to="/about" sx={{ marginRight: 2 }}>
                     About
@@ -16,12 +17,10 @@ function MainPage() {
             <Typography variant="h3" align="center" gutterBottom>
                 Travel With <span style={{ color: 'orange' }}>Booking</span>
             </Typography>
-            <Paper elevation={3} style={{ padding: '20px', marginTop: '30px' }}>
-                <Grid container spacing={3}>
-                    <Grid item xs={12} md={3}>
-                        <TextField label="Destination" variant="outlined" fullWidth />
-                    </Grid>
-                    <Grid item xs={12} md={2}>
+            <Paper elevation={3} sx={{ padding: '20px', marginTop: '30px' }}>
+                <Box display="flex" flexDirection="column" alignItems="stretch" gap={3}>
+                    <TextField label="Destination" variant="outlined" fullWidth />
+                    <Box display="flex" justifyContent="space-between" gap={2}>
                         <TextField
                             label="Check in"
                             type="date"
@@ -29,8 +28,6 @@ function MainPage() {
                             fullWidth
                             InputLabelProps={{ shrink: true }}
                         />
-                    </Grid>
-                    <Grid item xs={12} md={2}>
                         <TextField
                             label="Check out"
                             type="date"
@@ -38,24 +35,21 @@ function MainPage() {
                             fullWidth
                             InputLabelProps={{ shrink: true }}
                         />
-                    </Grid>
-                    <Grid item xs={12} md={2}>
+                    </Box>
+                    <Box display="flex" justifyContent="space-between" gap={2}>
                         <TextField label="Adults" type="number" variant="outlined" fullWidth />
-                    </Grid>
-                    <Grid item xs={12} md={2}>
                         <TextField label="Children" type="number" variant="outlined" fullWidth />
-                    </Grid>
-                    <Grid item xs={12} md={1}>
+                    </Box>
+                    <Box display="flex" justifyContent="flex-end">
                         <Button
                             variant="contained"
                             color="primary"
-                            fullWidth
-                            sx={{ height: '100%' }}
+                            sx={{ minWidth: '120px', height: '56px' }}
                         >
                             Submit
                         </Button>
-                    </Grid>
-                </Grid>
+                    </Box>
+                </Box>
             </Paper>
         </Container>
     );
